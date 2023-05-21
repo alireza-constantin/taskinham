@@ -1,5 +1,5 @@
 import { cva, VariantProps } from "class-variance-authority"
-import { FC } from "react"
+import type { ButtonHTMLAttributes, FC } from "react"
 
 const buttonClasses = cva(
     [
@@ -23,12 +23,12 @@ const buttonClasses = cva(
 
                 secondary: [
                     "bg-white",
-                    "text-black",
+                    "text-gray-800",
                     "border-gray-400",
                     "hover:bg-gray-100",
                     "border-solid",
                     "border-2",
-                    "border-gray-800",
+                    "border-gray-700",
                 ],
                 text: ["bg-transparent", "text-black", "hover:bg-gray-100"],
             },
@@ -45,7 +45,7 @@ const buttonClasses = cva(
     }
 )
 
-type ButtonProps = VariantProps<typeof buttonClasses> & React.HtmlHTMLAttributes<HTMLButtonElement>
+type ButtonProps = VariantProps<typeof buttonClasses> & ButtonHTMLAttributes<HTMLButtonElement>
 
 const Button: FC<ButtonProps> = ({ children, className, intent, size, ...props }) => {
     return (
